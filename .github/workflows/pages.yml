@@ -56,7 +56,8 @@ jobs:
 
       - name: Deploy to gh-pages
         uses: peaceiris/actions-gh-pages@v3
+        env:
+          super_secret: ${{ secrets.MY_FIRST_SECRET }}
         with:
           github_token: ${{ secrets.GH_ACCESS_TOKEN }}
-          super_secret: ${{ secrets.MY_FIRST_SECRET }}
           publish_dir: ./build
