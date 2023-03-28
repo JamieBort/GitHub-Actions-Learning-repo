@@ -3,8 +3,8 @@ import './App.css';
 let status1;
 let status2;
 
-const A_SECRET = process.env.MY_FIRST_SECRET;
-const A_DIFFERENT_SECRET = process.env.super_secret;
+const A_SECRET = process.env.REACT_APP_MY_FIRST_SECRET;
+const A_DIFFERENT_SECRET = process.env.REACT_APP_super_secret;
 
 if(A_SECRET) status1 = true;
 else status1 = false;
@@ -19,7 +19,7 @@ function App() {
     <div className="App">
       <header className="App-header">
       <h1>Main branch</h1>
-      <p>Moved the super_secret under env:</p>
+      <p>Modified the names of the variables.</p>
         <p>"My FIRST SECRET" <b>{status1 ? A_SECRET : "does not exist"}</b>.</p>
         <p>"my first secret" <b>{status2 ? A_DIFFERENT_SECRET : "does not exist"}</b>.</p>
       </header>
