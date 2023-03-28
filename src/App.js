@@ -5,6 +5,10 @@ let status2;
 
 const A_SECRET = process.env.REACT_APP_MY_FIRST_SECRET;
 const A_DIFFERENT_SECRET = process.env.REACT_APP_super_secret;
+// console.log(process.env.REACT_APP_SS)
+
+const RASS = process.env.REACT_APP_SS;
+// const RASS = "process.env.REACT_APP_SS";
 
 if(A_SECRET) status1 = true;
 else status1 = false;
@@ -19,9 +23,10 @@ function App() {
     <div className="App">
       <header className="App-header">
       <h1>Main branch</h1>
-      <p>Moved the location of env.</p>
+      <p>Hail Mary.</p>
         <p>"My FIRST SECRET" <b>{status1 ? A_SECRET : "does not exist"}</b>.</p>
         <p>"my first secret" <b>{status2 ? A_DIFFERENT_SECRET : "does not exist"}</b>.</p>
+        <p>{RASS}</p>
       </header>
     </div>
   );
