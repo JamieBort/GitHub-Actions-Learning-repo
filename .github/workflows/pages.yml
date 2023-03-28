@@ -17,7 +17,7 @@ jobs:
     name: build
 
     # OS to run the job on.
-    runs-on: ubunto-latest
+    runs-on: ubuntu-latest
 
     # Steps
     steps:
@@ -44,7 +44,7 @@ jobs:
   # Deploy job
   deploy:
     name: Deploy
-    runs-on: ubunto-latest
+    runs-on: ubuntu-latest
     needs: build
 
     steps:
