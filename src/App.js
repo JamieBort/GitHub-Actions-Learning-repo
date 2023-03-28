@@ -1,22 +1,26 @@
-import logo from './logo.svg';
 import './App.css';
 
+let status1;
+let status2;
+
+const A_SECRET = process.env.MY_FIRST_SECRET;
+const A_DIFFERENT_SECRET = process.env.github_secret;
+
+if(A_SECRET) status1 = true;
+else status1 = false;
+
+if(A_DIFFERENT_SECRET) status2 = true;
+else status2 = false;
+
+
 function App() {
+
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+      <h1>Main brain</h1>
+        <p>"My FIRST SECRET" <b>{status1 ? A_SECRET : "does not exist"}</b>.</p>
+        <p>"my first secret" <b>{status2 ? A_DIFFERENT_SECRET : "does not exist"}</b>.</p>
       </header>
     </div>
   );
