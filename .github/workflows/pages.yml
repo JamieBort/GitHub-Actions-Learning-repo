@@ -1,0 +1,62 @@
+# Tigger
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+#
+
+jobs:
+  # Build job
+  build:
+    # Name of the job.
+    name: build
+
+    # OS to run the job on.
+    runs-on: ubunto-latest
+
+    # Steps
+    steps:
+      - name: Checkout code
+        uses: actions/checkkout@v2
+
+      - name: Install Node.js
+        uses: actions/setup-node
+        with:
+          node-version: 16.x
+
+      - name: Install NPM Dependencies
+        run: npm i
+
+      - name: Build Project
+        run: npm run build
+
+      - name: Upload artifact in order to deploy
+        uses: actions/upload-artifact@v2
+        with:
+          name: production-files
+          path: ./build
+
+  # Deploy job
+deploy:
+  name: Deploy
+  runs-on: ubunto-latest
+  needs: build
+
+  steps:
+    - name: Download artifact
+      uses: actions/download-artifact@v2
+      with:
+        name: production-files
+        path: ./build
+
+    - name: Deploy to gh-pages
+      uses: peaceiris/actions-gh-pages@v3
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        github_secret: ${{ secrets.MY_FIRST_SECRET }}
+        publish_dir: ./build
