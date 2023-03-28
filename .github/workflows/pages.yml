@@ -22,7 +22,7 @@ jobs:
     # Steps
     steps:
       - name: Checkout code
-        uses: actions/checkkout@v2
+        uses: actions/checkout@v2
 
       - name: Install Node.js
         uses: actions/setup-node
