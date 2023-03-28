@@ -58,5 +58,5 @@ jobs:
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GH_ACCESS_TOKEN }}
-          # github_secret: ${{ secrets.MY_FIRST_SECRET }}
+          super_secret: ${{ secrets.MY_FIRST_SECRET }}
           publish_dir: ./build

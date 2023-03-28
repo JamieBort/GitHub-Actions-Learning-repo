@@ -4,7 +4,7 @@ let status1;
 let status2;
 
 const A_SECRET = process.env.MY_FIRST_SECRET;
-const A_DIFFERENT_SECRET = process.env.github_secret;
+const A_DIFFERENT_SECRET = process.env.super_secret;
 
 if(A_SECRET) status1 = true;
 else status1 = false;
@@ -18,7 +18,7 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-      <h1>Main brain</h1>
+      <h1>Main branch</h1>
         <p>"My FIRST SECRET" <b>{status1 ? A_SECRET : "does not exist"}</b>.</p>
         <p>"my first secret" <b>{status2 ? A_DIFFERENT_SECRET : "does not exist"}</b>.</p>
       </header>
