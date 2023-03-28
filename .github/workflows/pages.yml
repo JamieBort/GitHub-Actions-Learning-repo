@@ -46,6 +46,8 @@ jobs:
     name: Deploy
     runs-on: ubuntu-latest
     needs: build
+    env:
+      super_secret: ${{ secrets.MY_FIRST_SECRET }}
 
     steps:
       - name: Download artifact
@@ -56,8 +58,7 @@ jobs:
 
       - name: Deploy to gh-pages
         uses: peaceiris/actions-gh-pages@v3
-        env:
-          super_secret: ${{ secrets.MY_FIRST_SECRET }}
         with:
           github_token: ${{ secrets.GH_ACCESS_TOKEN }}
           publish_dir: ./build
+# - run: 'echo "$SSH_KEY" >> ~/.ssh/github-action'

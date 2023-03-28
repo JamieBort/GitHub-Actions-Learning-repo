@@ -19,7 +19,7 @@ function App() {
     <div className="App">
       <header className="App-header">
       <h1>Main branch</h1>
-      <p>Modified the names of the variables.</p>
+      <p>Moved the location of env.</p>
         <p>"My FIRST SECRET" <b>{status1 ? A_SECRET : "does not exist"}</b>.</p>
         <p>"my first secret" <b>{status2 ? A_DIFFERENT_SECRET : "does not exist"}</b>.</p>
       </header>
